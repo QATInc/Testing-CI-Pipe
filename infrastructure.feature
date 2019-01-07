@@ -1,7 +1,7 @@
 ### infrastructure.feature
 
 Given there are no agents online matching "label"
-When I run my pipeline
+When the pipeline runs
 Then the pipeline should fail
 
 Scenario: Jenkins is running and can be accessed
@@ -11,7 +11,7 @@ Then Jenkins will be online
 
 (future state)
 Given there are no agents online matching "label"
-When I run my pipeline
+When the pipeline runs
 Then agents matching "label" should be provisioned
 
 (future state)

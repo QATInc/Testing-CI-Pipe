@@ -13,10 +13,23 @@ Given manual test with @fail tag is committed
 When the pipeline runs
 Then that test will fail
 
-workflow test - if a fails, b should not run 
+Given stage "A" contains a failing test
+When the pipeline runs
+Then stage "B" will not run
+
+Given tag "A" contains a failing test
+When the pipeline runs
+Then stage "B" will not run
 
 check that todo (invalid) tags don't run 
+Given a test is tagged with the invalid tag
+When the pipeline runs
+Then the test will not run
 
-Given tags in jenkins-config, verify that only those tags run
+Given jenkins-config contains [tags]
+When the pipeline runs
+Then only tests with these tags will run
 
-Given language X is specified, does it run that language?
+Given "language" is specified
+When the pipeline runs
+Then only tests in that language will run

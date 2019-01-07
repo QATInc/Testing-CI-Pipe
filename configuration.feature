@@ -1,5 +1,11 @@
 ### config.feature
 - check configuration
     - access to library
-- if good jenkinsfile, pipeline should be good
-- if bad jenkinsfile, jenkins should be bad
+
+Given jenkinsfile with bad syntax checked in
+When the pipeline runs
+Then the pipeline will fail
+
+Given jenkinsfile with good syntax checked in
+When the pipeline runs
+Then the pipeline will pass
